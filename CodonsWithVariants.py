@@ -7,6 +7,24 @@ List_of_Genes = ['Gene_01_accession.1','Gene_02_accession.1','Gene_03_accession.
 List_of_Genes_end = [item + "_end" for item in List_of_Genes]
 
 
+"""
+Pipeline for processing variants using GFF3 features.
+
+This script:
+1. Imports necessary libraries (pandas, math)
+2. Defines input/output files and lists of genes
+3. Processes GFF3 feature table to extract CDS information
+4. Validates variants against gene boundaries
+5. Calculates codon positions based on variant location within genes
+6. Creates mRNA tables from gene features
+7. Cleans up intermediate data before final output
+
+Note: This code assumes the following input files:
+- Variants_CLC_table.txt: Contains variant information
+- sequence.gff3: Contains genomic feature information (GFF3)
+"""
+
+
 ## Format feature table to pandas DF.................................................
 column_names = ['seqid', 'source', 'type', 'start', 'end', 'score', 'strand', 'phase', 'attributes']
 FT = pd.read_csv(GFF3_FILE, sep="\t", quoting=3, skiprows = 5, names= column_names)
