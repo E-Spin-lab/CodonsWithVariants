@@ -1,0 +1,18 @@
+##gff-version 3
+#!gff-spec-version 1.21
+#!processor NCBI annotwrite
+##sequence-region ABCD1234.2 1 10000
+## species ABCD
+ABCD1234.2	.	region	1	10000	.	.	.	ID=region1;Name=Chromosome1
+ABCD1234.2	.	gene	1000	3000	.	+	.	ID=gene1;Name=Gene1
+ABCD1234.2	.	mRNA	1000	3000	.	+	.	ID=mRNA1;Parent=gene1;Name=Transcript1
+ABCD1234.2	.	exon	1000	1200	.	+	.	ID=exon1;Parent=mRNA1
+ABCD1234.2	.	CDS	1100	1200	.	+	0	ID=cds1;Parent=mRNA1
+ABCD1234.2	.	gene	4000	6000	.	-	.	ID=gene2;Name=Gene2
+ABCD1234.2	.	mRNA	4000	6000	.	-	.	ID=mRNA2;Parent=gene2;Name=Transcript2
+ABCD1234.2	.	exon	5800	6000	.	-	.	ID=exon2;Parent=mRNA2
+ABCD1234.2	.	CDS	5800	5900	.	-	0	ID=cds2;Parent=mRNA2
+ABCD1234.2	.	gene	7000	9000	.	+	.	ID=gene3;Name=Gene3
+ABCD1234.2	.	mRNA	7000	9000	.	+	.	ID=mRNA3;Parent=gene3;Name=Transcript3
+ABCD1234.2	.	exon	8500	8700	.	+	.	ID=exon3;Parent=mRNA3
+ABCD1234.2	.	CDS	8600	8700	.	+	0	ID=cds3;Parent=mRNA3
